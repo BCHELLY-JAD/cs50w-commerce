@@ -1,0 +1,151 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+
+
+
+<div class="top">
+<h2>Title:{{ item.title }}</h2>
+
+
+ {% if user.is_authenticated %}
+
+ 
+                {% if result %}
+<form method= "POST" action="{% url 'removewatchlist' item.id %}">
+         {% csrf_token %}
+        <input  class="add" type="submit" value="Remove from Watchlist">
+</form>
+                {% else %}
+<form method= "POST" action="{% url 'addwatchlist' item.id %}">
+         {% csrf_token %}
+    <input  class="add" type="submit" value="Add to Watchlist">
+</form>
+        {% endif %}
+
+        {% endif %}
+</div>
+
+
+
+
+<div class="bottom">
+<img src="{{ item.image }}">
+
+
+<div class="item1 item"><span class="site">Description:</span> {{ item.description }}</div>
+<div class="item1 item2"> <span class="site">Price:</span> ${{ item.bid }}</div>
+<div class="item1 item3"><span class="site">Created on</span> {{ item.date }}</div>
+<div class="item1 item4"><span class="site">Listed by</span> {{ item.owner }}</div>
+<div class="item1 item5"><span class="site">Category:</span> {{ item.category }}</div>
+
+     
+
+                          <div class="closing"> 
+                              
+                                   {% if user == item.owner %}
+                                      
+                                   <form method= "POST" action="{% url 'close' item.id %}">
+                                        {% csrf_token %}
+                                        <button  type="submit" name="close_auction">Close Auction</button>
+                                   </form>          
+                                   {% endif %}
+                          </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="comments">
+
+ <form action="{% url 'item' item.id %}"  method="POST">
+         {% csrf_token %}
+
+<h5 class="pl-3"> <span class="site site1">Make a Bid:</span></h5>
+
+
+{% if latest_bid %}
+<div><p>The current price is <span class="site">$ {{ latest_bid.bid }} </p></span></div>
+{% else %}
+<div><p>The current price is <span class="site">$ {{ current_bid }} </p></span></div>
+
+{% endif %}
+
+{% if user.is_authenticated %}
+
+                        {% if message %}
+                <div class="message"><p>{{ message }}</p></div>
+                        {% endif %}
+
+                         {% if messageprice %}
+                <div class="messageprice"><p>{{ messageprice }}</p></div>
+                        {% endif %}
+
+                        {% if error %}
+                <div class="error"><p>{{ error }}</p></div>
+                        {% endif %}
+
+ 
+        
+<div class="col-2">
+  
+
+        <input type="number" name="new_bidding_price" class="form-control" placeholder="$">
+    </div>
+
+
+                <div class="bidbid"> 
+        <button type="submit" class="bidbutton">Bid</button>
+        </div>
+
+       {% endif %}
+</form>
+
+
+
+<form action="{% url 'add' item.id %}" method="POST">
+
+        {% csrf_token %}
+<h5 class="pl-3"><span class="site site1">Comments:</span></h5>
+
+<ul class="thecomment">
+        
+         {% for comment in list_comment %}
+         <div class="singlecomment">
+                <div class="theuser">{{ comment.commenter }}</div>
+                {{ comment.comment }}
+                </div>
+                        {% empty %}
+        
+        <li>No Comments yet.</li>
+         {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+
+<div class="adcom">
+<h5 class="pl-3"><span class="site site1">Add a Comment:</span></h5>
+
+
+      
+
+<div class="col-8">
+        {{ form.text }}
+</div>
+
+<input type="submit" class="btn btn-primary ml-3">
+</div>
+   {% endif %}
+  
+</div>
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>Active Listings:</h2>
+    
+{% for listing in listings %}
+<div class="all">
+  <div class="image">
+    <img src="{{ listing.image }}">
+</div>
+
+  <div class="info">
+
+  <div class="title">{{ listing.title }}</div>
+  <div class="description">{{ listing.description }}</div>
+  <div class="price"> Price: ${{ listing.bid }}</div>
+  <div class="creation"> created on {{ listing.date }}</div>
+  </div>
+  
+
+
+  <a href="{% url 'item' listing.id %}">
+    <input type="submit" class="submit" value="View">
+  </a>
+
+
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

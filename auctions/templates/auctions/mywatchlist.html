@@ -1,0 +1,41 @@
+
+
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+
+  
+
+    <h2>Watchlist</h2>
+
+    {% for my in mywatch %}
+    
+    <div class="all">
+        <div class="image">
+          <img src="{{ my.image }}">
+      </div>
+      
+        <div class="info">
+      
+        <div class="title">{{ my.title }}</div>
+        <div class="description">{{ my.description }}</div>
+        <div class="price"> Price: ${{ my.bid }}</div>
+        <div class="creation"> created on {{ my.date }}</div>
+        </div>
+        
+        
+        <a href="{% url 'item' my.id %}">
+          <input type="submit" class="submit" value="View">
+        </a>
+      </div>
+      {% empty %}
+
+      <div class="empty">
+      <h3>No items related to that watchlist</h3>
+        </div>
+    {% endfor %}
+    
+
+
+{% endblock %}

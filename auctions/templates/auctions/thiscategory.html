@@ -1,0 +1,38 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+
+  
+
+    <h2>Category: {{ name }}</h2>
+
+    {% for category in categories %}
+    
+    <div class="all">
+        <div class="image">
+          <img src="{{ category.image }}">
+      </div>
+      
+        <div class="info">
+      
+        <div class="title">{{ category.title }}</div>
+        <div class="description">{{ category.description }}</div>
+        <div class="price"> Price: ${{ category.bid }}</div>
+        <div class="creation"> created on {{ category.date }}</div>
+        </div>
+        
+        
+        <a href="{% url 'item' category.id %}">
+          <input type="submit" class="submit" value="View">
+        </a>
+      </div>
+      {% empty %}
+
+      <div class="empty">
+      <h3>No items related to that category</h3>
+        </div>
+    {% endfor %}
+    
+
+{% endblock %}

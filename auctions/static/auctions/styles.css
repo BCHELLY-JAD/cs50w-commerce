@@ -1,0 +1,346 @@
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{ 
+    background: #292929;
+}
+
+
+.active{ 
+    
+    padding:10px;
+    color: #fff;
+}
+
+
+h1{ 
+    color: cyan;
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    text-align: center;
+}
+
+.welcome{ 
+    color: #fff;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+strong{ 
+    color: cyan;
+}
+
+.nav{ 
+    padding-left: 20px;
+    justify-content: center;
+}
+
+
+header{ 
+   background: #1b1b1b;
+   border-bottom: 2px solid cyan;
+}
+
+a{ 
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.nav a:hover{ 
+    box-shadow: 0 0 5px #33ffff,
+    0 0 5px #66ffff;
+    color: white;  
+}
+
+.subsub .btn{ 
+    width: 120px;
+    margin-bottom: 40px;
+}
+
+.creating .pl-3{ 
+    margin:10px 0px 10px 0px;
+}
+
+                /*index*/
+
+h2{
+    color: cyan; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 40px;
+    opacity: 0.5;
+}
+
+.all{ 
+    display: flex;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    height: 200px;
+    margin: 20px;
+    margin-left:100px;
+    margin-top: 30px;
+    width: 800px;
+    align-items: center;
+}
+
+
+.all:hover{ 
+    box-shadow: 0 0 5px #33ffff,
+    0 0 5px #66ffff;
+    color: white;  
+}
+
+
+.image{ 
+    float: left;
+    padding-left: 20px;
+    
+}
+
+.image img{ 
+    width:250px;
+    height: 150px;
+    border: 1px solid #1b1b1b;
+    
+}
+
+.info{ 
+    float: right;
+    padding-left: 20px;
+}
+
+.creation{ 
+    color: #6b6b6b;
+}
+
+.title, .description, .price{ 
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.submit{ 
+    background-color: #828282;
+    outline: none;
+    border: 0.5px solid cyan;
+    color: cyan;
+    width: 85px;
+    padding: 10px;
+    margin-left: 70px;
+    position: relative;
+    cursor: pointer;
+  
+}
+
+.submit:hover{ 
+    color: #fff;
+    background-color: cyan;
+}
+
+                        /* item */
+.top{ 
+    display: flex;
+    
+}
+
+.top input{ 
+width: 200px;
+margin-left: 400%;
+}
+         
+.add{ 
+    background-color: #828282;
+    outline: none;
+    border: 0.5px solid cyan;
+    color: cyan;
+    width: 85px;
+    padding: 10px;
+    margin-left: 60%;
+    position: relative;
+    cursor: pointer;
+    width: 100px;
+}
+
+.add:hover{ 
+    color: #fff;
+    background-color: cyan;
+}
+
+.bottom{ 
+    margin-top: 40px;
+    margin-left: 15px;
+    display: flex;
+    
+}
+
+.bottom img{ 
+    width: 600px;
+    height: 350px;
+}
+
+.item1{ 
+    
+    display: inline-block;
+    position: absolute;
+    font-size: 20px;
+    
+}
+
+.item{ 
+    left:45%;
+}
+
+.item2{ 
+    left: 45%;
+    top: 40%;
+}
+
+.item3{ 
+    left: 45%; 
+    top: 45%;
+}
+
+.item4{ 
+    left:45%;
+    top:50%;
+}
+
+.item5{ 
+    left: 45%;
+    top:55%;
+}
+
+.site{ 
+    color: cyan;
+}
+
+.site1{ 
+    margin:20px;
+}
+
+.comments .pl-3{ 
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.comments input{ 
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.comments .btn{ 
+    width: 120px;
+    position: relative;
+    left: 58%;
+    margin-bottom: 40px;
+    margin-top: 20px; 
+}
+
+.categories, .watchlist{ 
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+.thecomment{ 
+    margin-left: 38px;
+    width: 300px;
+    height: 45px;
+    padding-bottom: 20px;
+ 
+   
+      
+}
+
+
+.singlecomment{ 
+    border-width: 50px;
+    border-bottom: 1px solid #fff; 
+    padding-top: 15px;
+}
+
+.adcom{ 
+    padding-top: 100px;
+  
+}
+
+.theuser{ 
+    color: cyan;
+    font-size: 15px;   
+}
+
+.comments p{ 
+    margin-left: 33px; 
+}
+
+.empty{ 
+    margin-left: 40px;
+}
+
+.closing{ 
+ position: absolute; 
+ top:50%px;
+    
+}
+
+.closing button{ 
+    color: red;
+    padding: 15px 10px;
+    background-color: cyan;
+    border: 1px solid red;
+    font-weight: 800px;
+    font-size: 18px;
+}
+
+
+.closing button:hover{ 
+    color: #fff;
+    background-color: red;
+}
+
+
+.bidbid{ 
+    margin: 15px 0px 0px 152px; 
+    
+    
+}
+
+.bidbutton{ 
+    width: 100px;
+    height: 40px;
+    background-color: #17a2b8;
+    color: #fff; 
+    font-weight: 400;
+    border-radius: .25rem;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.empty{ 
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.message{ 
+    color: green;
+}
+
+.error{ 
+    color: red;
+}
+
+.messageprice{ 
+    color:cyan;
+}
+
+
+
+
+
+

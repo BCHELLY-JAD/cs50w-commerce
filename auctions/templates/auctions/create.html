@@ -1,0 +1,44 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Create Listings</h2>
+ <br>
+<form action="{% url 'create' %}" method="POST"> 
+    {% csrf_token %}
+<div class="creating">
+   <h5 class="pl-3"> Title:</h5>
+    <div class="col-3">
+    <input type="text" class="form-control" name="title" placeholder=" Enter title..">
+    </div>
+<br>
+    <h5 class="pl-3"> Description:</h5>
+    <div class="col-8">
+        <input type="text" class="form-control"  name="description" placeholder="Description">
+        </div>
+
+<br> 
+    <h5 class="pl-3"> Starting Bid:</h5>
+    <div class="col-2">
+        <input type="text" name="bid" class="form-control" placeholder="$">
+    </div>
+<br> 
+    <h5 class="pl-3">*Image URL:</h5>
+    <div class="col-3">
+        <input type="text" name="image" class="form-control" placeholder="enter url..">
+    </div>
+
+<br>
+<h5 class="pl-3">*Category:</h5>
+<select class="form-control col-4 ml-3" name="category">
+    <option>Toys</option>
+    <option>Electronics</option>
+    <option>Auto dealers</option>
+    <option>Apparel</option>
+  </select>
+<br> 
+</div>
+<div class="subsub"> 
+<button type="submit" class="btn btn-primary ml-3">Submit</button>
+</div>
+</form>
+{% endblock %}
